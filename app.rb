@@ -19,6 +19,16 @@ get "/contacts" do
   erb :index
 end
 
+class Session < ActiveRecord::Base
+  self.table_name = 'salesforce.session'
+end
+
+get "/sessions" do
+  @session = Session.all
+  erb :index
+end
+
+
 get "/create" do
   dashboard_url = 'https://dashboard.heroku.com/'
   match = /(.*?)\.herokuapp\.com/.match(request.host)
