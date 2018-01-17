@@ -20,11 +20,11 @@ get "/contacts" do
 end
 
 class Session < ActiveRecord::Base
-  self.table_name = 'salesforce.session'
+  self.table_name = 'salesforce.session__c'
 end
 
 get "/sessions" do
-  @sessions = Session.all
+  @sessions = Session__c.all
   erb :index
 end
 
