@@ -24,7 +24,7 @@ class Session < ActiveRecord::Base
 end
 
 get "/sessions" do
-  @session = Session.all
+  @sessions = Session.all
   erb :index
 end
 
